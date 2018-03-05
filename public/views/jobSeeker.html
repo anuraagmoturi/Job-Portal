@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JobSeeker</title>
+    <style>
+        .container{
+            margin: 20px auto;
+            width: 60%;
+            height: 30%x;
+            background-color: ;
+            padding: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="../bootstrap.css">
+</head>
+
+<body ng-app="myapp">
+<div class="container">
+
+    <!--<form class="form-group" name="signUpForm">-->
+        <!--<input class="form-control" type="text" placeholder="Username" ng-model="user.username"> <br>-->
+
+        <!--<input class="form-control" type="password" placeholder="Password" ng-model="user.password"> <br>-->
+
+        <!--<input class="form-control" type="text" placeholder="Email" ng-model="user.email"> <br>-->
+
+        <!--<input class="form-control" type="text" placeholder="Location" ng-model="user.location"> <br>-->
+
+        <!--<input class="form-control" type="text" placeholder="Phone" ng-model="user.phone"> <br>-->
+
+        <!--<br>-->
+
+
+        <!--<button class="btn btn-primary" ng-click="registerFn()">Post</button>-->
+
+        <!--<button class="btn btn-primary" ng-click="logback()">Cancel</button>-->
+
+    <!--</form>-->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a ng-click="logOut()"> Log out</a></li>
+            </ul>
+        </div>
+    </nav>
+    <form class="form-group">
+        <input type="text" class="form-control" placeholder="Search Title" ng-model="searchObj.title"><br>
+        <input type="text" class="form-control" placeholder="Search Description" ng-model="searchObj.description"><br>
+        <input type="text" class="form-control" placeholder="Search Location" ng-model="searchObj.location"><br>
+        <button class="btn btn-primary" ng-click="searchFn()">Search</button>
+        <button class="btn btn-primary" ng-click="cancelFn()">Cancel</button>
+    </form>
+    <table id="myTable" class="table table-responsive table-bordered table-striped">
+        <!--<tr>-->
+            <!--<td><input type="text" class="form-control" placeholder="Search Title" ng-model="filter_val.title"></td>-->
+            <!--<td><input type="text" class="form-control" placeholder="Search Description" ng-model="filter_val.description"></td>-->
+            <!--<td><input type="text" class="form-control" placeholder="Search Location" ng-model="filter_val.location"></td>-->
+        <!--</tr>-->
+        <tr>
+            <th>Job Title</th>
+            <th>Job Descrition</th>
+            <th>Job Location</th>
+        </tr>
+
+        <tr ng-repeat="job in jobs | filter:filter_val track by $index " id="{{$index}}">
+            <td>{{job.title}}</td>
+            <td>{{job.description}}</td>
+            <td>{{job.location}}</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

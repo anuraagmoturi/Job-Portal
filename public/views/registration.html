@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <style>
+        .container{
+            margin: 20px auto;
+            width: 60%;
+            height: 30%x;
+            background-color: gainsboro;
+            padding: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="../bootstrap.css">
+
+
+</head>
+
+<body ng-app="myapp">
+<div class="container">
+    <h2>Sign Up</h2>
+    <form class="form-group" name="signUpForm">
+        <input class="form-control" type="text" placeholder="Username" ng-model="user.username"> <br>
+
+        <input class="form-control" type="password" placeholder="Password" ng-model="user.password"> <br>
+
+        <input class="form-control" type="text" placeholder="Email" ng-model="user.email"> <br>
+
+        <input class="form-control" type="text" placeholder="Location" ng-model="user.location"> <br>
+
+        <input class="form-control" type="text" placeholder="Phone" ng-model="user.phone"> <br>
+
+        <!--<select class="form-control" id="sel1" ng-model="user.userType">-->
+            <!--<option>User Type</option>-->
+            <!--<option ng-options="job seeker">Job Seeker</option>-->
+            <!--<option ng-options="company">Company</option>-->
+        <!--</select> <br>-->
+        <!---->
+        <label for="usertype">User Type</label>
+        <select class="form-control" ng-model="selected" ng-options="x.userType for x in usertypes">
+        </select>
+
+        <br>
+
+
+        <button class="btn btn-primary" ng-click="registerFn()">Register</button>
+
+        <button class="btn btn-primary" ng-click="logback()">Log in</button>
+
+    </form>
+</div>
+
+</body>
+</html>

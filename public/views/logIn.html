@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="../bootstrap.css">
+    <style>
+        .container{
+            margin: 20px auto;
+            width: 60%;
+            height: 300px;
+            background-color: gainsboro;
+            padding: 20px;
+        }
+    </style>
+
+</head>
+<body ng-app="myapp">
+    <div class="container">
+
+        <h2>Log in</h2>
+        <form class="form-group">
+            <input class="form-control" type="text" placeholder="Username" ng-model="logIn.username"> <br>
+            <input class="form-control" type="password" placeholder="Password" ng-model="logIn.password"><br>
+            <button class="btn btn-primary" ng-click="logInFn()">Log in</button>
+            <a href="#/reg" style="float: right">Not a Member?</a>
+        </form>
+
+        <!--<div ng-view=""></div>-->
+
+    </div>
+</body>
+</html>
+
